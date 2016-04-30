@@ -58,6 +58,7 @@ source $PWD/distros/$DISTRO/install_bind.sh
 source $PWD/distros/$DISTRO/install_webstats.sh
 source $PWD/distros/$DISTRO/install_jailkit.sh
 source $PWD/distros/$DISTRO/install_fail2ban.sh
+source $PWD/distros/$DISTRO/install_mailman.sh
 source $PWD/distros/$DISTRO/install_webmail.sh
 source $PWD/distros/$DISTRO/install_ispconfig.sh
 source $PWD/distros/$DISTRO/install_fix.sh
@@ -146,7 +147,8 @@ if [ -f /etc/debian_version ]; then
     InstallBind 
   fi  
   InstallWebStats   
-  InstallFail2ban 
+  InstallFail2ban
+  InstallMailman
   InstallISPConfig
   InstallFix
   echo -e "${green}Well done ISPConfig installed and configured correctly :D ${NC}"
