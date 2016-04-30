@@ -15,7 +15,7 @@ echo "Press ENTER to continue.."
 read DUMMY
 
 #Install Mailman
-apt-get install -y mailman
+apt-get install -yqq mailman
 newlist mailman
 
 mv /etc/aliases /etc/aliases.backup
