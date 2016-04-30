@@ -1,5 +1,10 @@
-InstallMailman (){
+#---------------------------------------------------------------------
+# Function: InstallMailman
+#    Install Mailman
+#---------------------------------------------------------------------
 
+InstallMailman (){
+echo -n "Installing Mailman... "
 echo "================================================================================================"
 echo "You will be prompted for some information during the install."
 echo "Select the languages you want to support and hit OK when told about the missing site list"
@@ -30,12 +35,12 @@ EOF
 
 cat /etc/aliases.backup /etc/aliases.mailman > /etc/aliases
 newaliases
-/etc/init.d/postfix restart
+service postfix restart
 		if [ $web_server == "Apache" ]; then
 				ln -s /etc/mailman/apache.conf /etc/apache2/conf.d/mailman.conf
-				/etc/init.d/apache2 restart
+				service apache2 restart
 		fi
-/etc/init.d/mailman start
-
-} # end function debian.install_Mailman
+service mailman start
+echo -e "[${green}DONE${NC}]\n"
+}
 
