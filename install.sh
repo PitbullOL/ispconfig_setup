@@ -58,7 +58,7 @@ source $PWD/distros/$DISTRO/install_bind.sh
 source $PWD/distros/$DISTRO/install_webstats.sh
 source $PWD/distros/$DISTRO/install_jailkit.sh
 source $PWD/distros/$DISTRO/install_fail2ban.sh
-source $PWD/distros/$DISTRO/install_mailman.sh
+#source $PWD/distros/$DISTRO/install_mailman.sh
 source $PWD/distros/$DISTRO/install_metronom.sh
 source $PWD/distros/$DISTRO/install_webmail.sh
 source $PWD/distros/$DISTRO/install_ispconfig.sh
@@ -149,7 +149,7 @@ if [ -f /etc/debian_version ]; then
   fi  
   InstallWebStats   
   InstallFail2ban
-  InstallMailman
+  #InstallMailman
   InstallMetronom
   InstallISPConfig
   InstallFix
