@@ -34,13 +34,17 @@ mailman-unsubscribe:  "|/var/lib/mailman/mail/mailman unsubscribe mailman"
 EOF
 
 cat /etc/aliases.backup /etc/aliases.mailman > /etc/aliases
+
 newaliases
+
 service postfix restart
-		if [ $web_server == "Apache" ]; then
-				ln -s /etc/mailman/apache.conf /etc/apache2/conf.d/mailman.conf
-				service apache2 restart
-		fi
+
+ln -s /etc/mailman/apache.conf /etc/apache2/conf.d/mailman.conf
+
+service apache2 restart
+
 service mailman start
+
 echo -e "[${green}DONE${NC}]\n"
 }
 
