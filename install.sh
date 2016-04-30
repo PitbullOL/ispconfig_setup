@@ -149,6 +149,7 @@ if [ -f /etc/debian_version ]; then
   InstallWebStats   
   InstallFail2ban
   InstallMailman
+  InstallMetronom
   InstallISPConfig
   InstallFix
   echo -e "${green}Well done ISPConfig installed and configured correctly :D ${NC}"
